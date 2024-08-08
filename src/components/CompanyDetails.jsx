@@ -26,10 +26,12 @@ const CompanyDetails = ({ details }) => {
         sx={{
           backgroundColor: '#FFFFFF',
           borderTop: '5px solid ',
+          minHeight: '260px',
           borderColor: getboardercolor(statuscolor),
           borderRadius: '16px',
           padding: '24px',
           cursor: 'pointer',
+
           transition: 'all 0.2s ease-in-out',
           '&:hover': {
             backgroundColor: '#E5E6E6',
@@ -86,6 +88,12 @@ const CompanyDetails = ({ details }) => {
             fontFamily: 'Inter',
             fontWeight: 'regular',
             color: '#4D545E',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+
+            display: '-webkit-box',
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: 'vertical',
           }}
         >
           {details.description}

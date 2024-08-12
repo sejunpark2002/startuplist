@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import { Stack } from '@mui/system';
+// import { Stack } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import CompanyDetails from '../components/CompanyDetails';
 import { companylist } from '../data/companylist';
 import { categories } from '../data/Categories';
-import MyButton from '../components/MyButton';
+
 import SearchBar from '../components/SearchBar';
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+
+import CarouselButtons from '../components/CarouselButtons';
 
 const ShowCompanies = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  const [showMore, setShowMore] = useState(false);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -39,33 +37,23 @@ const ShowCompanies = () => {
           <SearchBar />
         </Box>
 
-        <Box sx={{ margin: 'auto', maxWidth: '1200px', textAlign: 'center' }}>
-          <Stack
-            direction="row"
-            spacing={2}
-            sx={{ flexWrap: 'wrap', gap: '10px', mt: '50px' }}
-          >
-            {/* <MyButton
-              category={categories[0]}
-              handleCategoryClick={handleCategoryClick}
-              isSelected={selectedCategory === categories[0]}
-            /> */}
-            {categories.map((category) => (
-              <MyButton
-                key={category}
-                category={category}
-                handleCategoryClick={handleCategoryClick}
-                isSelected={selectedCategory === category}
-              />
-            ))}
-          </Stack>
-          <Button
-            onClick={() => setShowMore(!showMore)}
-            endIcon={showMore ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-            variant="text"
-          >
-            Show More
-          </Button>
+        <Box
+          sx={{
+            margin: 'auto',
+            maxWidth: '1200px',
+            textAlign: 'center',
+            '@media (max-width: 600px)': {
+              // Media query for mobile devices
+              maxWidth: '80%', // Adjust max width on mobile
+              minWidth: 'auto', // Override the fixed minWidth
+            },
+          }}
+        >
+          <CarouselButtons
+            categories={categories}
+            handleCategoryClick={handleCategoryClick}
+            selectedCategory={selectedCategory}
+          />
         </Box>
 
         <Grid container spacing={4} padding="64px" sx={{ paddingTop: '64px' }}>

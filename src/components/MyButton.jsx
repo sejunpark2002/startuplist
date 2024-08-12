@@ -12,16 +12,21 @@ export default function MyButton({
       sx={{
         borderRadius: '60px',
         textTransform: 'none',
-        border: '1px solid rgb(224, 230, 242)',
+        // border: '1px solid rgb(224, 230, 242)',
+
+        border: '2px solid blue',
         backgroundColor: isSelected ? 'black' : 'rgb(239, 243, 250)',
         color: isSelected ? 'white' : '#707787',
         fontWeight: '600',
         fontSize: '14px',
         padding: '10px',
         whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        maxWidth: '100%',
+        minWidth: '250px',
+        maxWidth: '250px',
+
+        // overflow: 'hidden',
+        // textOverflow: 'ellipsis',
+        // maxWidth: '100%',
         '&:hover': {
           backgroundColor: isSelected ? '#707787' : '#DDDFE2',
         },

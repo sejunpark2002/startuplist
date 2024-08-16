@@ -121,6 +121,11 @@ const SearchBar = ({ onSearch }) => {
               zIndex: '1',
               transform: 'translate(-50%)',
               overflow: 'auto',
+              '@media (max-width: 600px)': {
+                // Media query for mobile devices
+                maxWidth: '80%', // Adjust max width on mobile
+                minWidth: 'auto', // Override the fixed minWidth
+              },
             }}
           >
             {filteredCompanies.map((company) => (

@@ -2,7 +2,7 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-// import logo from '../images/userlogo.png';
+import logo from '../startup.png';
 
 const header = () => {
   const navigate = useNavigate();
@@ -16,17 +16,18 @@ const header = () => {
         borderBottom={1}
         direction="row"
         spacing={1}
+        onClick={handleclick}
         sx={{
           bgcolor: '#FFFFFF',
           borderColor: '#D0D5DD',
           height: '55px',
           alignItems: 'center',
           padding: '20px',
+          cursor: 'pointer',
         }}
       >
-        {/* <img alt="logoimage" width="24px" height="24px" src={logo}></img> */}
+        <img alt="logoimage" width="24px" height="24px" src={logo}></img>
         <Typography
-          onClick={handleclick}
           sx={{
             fontSize: '18px',
             fontFamily: 'Inter',
@@ -35,7 +36,7 @@ const header = () => {
             cursor: 'pointer',
           }}
         >
-          Startup Hunt
+          Startup Finder
         </Typography>
       </Stack>
     </>

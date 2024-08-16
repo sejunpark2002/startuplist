@@ -79,8 +79,10 @@ const ShowCompanies = () => {
             margin: 'auto',
             maxWidth: '1200px',
             textAlign: 'center',
-            '@media (max-width: 992px)': {
-              display: 'none',
+            '@media (max-width: 600px)': {
+              // Media query for mobile devices
+              maxWidth: '80%', // Adjust max width on mobile
+              minWidth: 'auto', // Override the fixed minWidth
             },
           }}
         >

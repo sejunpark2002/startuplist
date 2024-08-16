@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 const header = () => {
   const navigate = useNavigate();
+  const handleclick = () => {
+    navigate('/');
+    window.location.reload();
+  };
   return (
     <>
       <Stack
@@ -22,7 +26,7 @@ const header = () => {
       >
         {/* <img alt="logoimage" width="24px" height="24px" src={logo}></img> */}
         <Typography
-          onClick={() => navigate('/')}
+          onClick={handleclick}
           sx={{
             fontSize: '18px',
             fontFamily: 'Inter',

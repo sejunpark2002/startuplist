@@ -12,17 +12,18 @@ export default function MyButton({
       sx={{
         borderRadius: '60px',
         textTransform: 'none',
-        // border: '1px solid rgb(224, 230, 242)',
+        border: '1px solid rgb(224, 230, 242)',
 
-        border: '2px solid blue',
         backgroundColor: isSelected ? 'black' : 'rgb(239, 243, 250)',
         color: isSelected ? 'white' : '#707787',
         fontWeight: '600',
         fontSize: '14px',
         padding: '10px',
-        whiteSpace: 'nowrap',
-        minWidth: '250px',
-        maxWidth: '250px',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap', // Prevent text from wrapping to the next line
+        overflow: 'hidden', // Hide any text that overflows the button's width
+
+        maxWidth: '300px',
 
         // overflow: 'hidden',
         // textOverflow: 'ellipsis',

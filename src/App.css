@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+.slick-prev, .slick-next {
+  color: rgb(95, 95, 95); /* Change this to your desired color */
+  z-index: 1; /* Ensure arrows are on top */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.slick-prev:hover, .slick-next:hover {
+  color: darkblue; /* Optional: Change color on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick'; 
+  font-size: 20px; /* Adjust the size of the arrows */
+  line-height: 1;
+  color: rgb(95, 95, 95); /* Change the color of the arrow icon */
+  opacity: 1; /* Ensure the arrows are fully visible */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Optional: Adjust the positioning of the arrows */
+.slick-prev {
+  left: -40px; /* Adjust position of the left arrow */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slick-next {
+  right: -40px; /* Adjust position of the right arrow */
 }

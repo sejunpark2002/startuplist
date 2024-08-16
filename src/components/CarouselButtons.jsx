@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MyButton from './MyButton';
+import '../App.css';
 
 const CarouselButtons = ({
   categories,
@@ -15,6 +16,8 @@ const CarouselButtons = ({
     speed: 500, // Animation speed
     slidesToShow: 4, // Number of buttons to show at once
     slidesToScroll: 2, // Number of slides to scroll at once
+    swipe: true,
+    variableWidth: true,
 
     responsive: [
       {
@@ -44,7 +47,9 @@ const CarouselButtons = ({
         {categories.map((category) => (
           <Box
             key={category}
-            sx={{ mx: 1, minWidth: '100%', border: '2px solid red' }}
+            sx={{
+              mx: 1,
+            }}
           >
             <MyButton
               category={category}

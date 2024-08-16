@@ -2,9 +2,6 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import HomeIcon from '@mui/icons-material/Home';
 
 const CompanyDetails = ({ details }) => {
   const statuscolor = details.status;
@@ -98,18 +95,6 @@ const CompanyDetails = ({ details }) => {
         >
           {details.description}
         </Typography>
-        <Stack direction="row" spacing={2} sx={{ mt: '20px' }}>
-          <HomeIcon
-            sx={{ cursor: 'pointer', color: '#838997' }}
-            onClick={() => window.open(details.homepage, '_blank')}
-          />
-          <LinkedInIcon
-            sx={{ cursor: 'pointer', color: '#838997' }}
-            onClick={() => window.open(details.linkedin, '_blank')}
-          />
-          <FavoriteIcon sx={{ cursor: 'pointer', color: '#838997' }} />
-          12
-        </Stack>
       </Box>
     </>
   );

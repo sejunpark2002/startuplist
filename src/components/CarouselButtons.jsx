@@ -23,7 +23,7 @@ const CarouselButtons = ({
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
         },
       },
       {
@@ -35,7 +35,8 @@ const CarouselButtons = ({
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          arrows: false,
+          slidesToShow: 1,
         },
       },
     ],

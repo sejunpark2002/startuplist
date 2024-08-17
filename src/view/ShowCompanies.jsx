@@ -76,6 +76,7 @@ const ShowCompanies = () => {
 
         <Box
           sx={{
+            whiteSpace: 'nowrap',
             margin: 'auto',
             maxWidth: '1200px',
             textAlign: 'center',
@@ -93,7 +94,16 @@ const ShowCompanies = () => {
           />
         </Box>
 
-        <Grid container spacing={4} padding="64px" sx={{ paddingTop: '64px' }}>
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            padding: '64px',
+            '@media (max-width: 600px)': {
+              padding: '24px 16px',
+            },
+          }}
+        >
           {currentCompanies.map((company) => (
             <Grid
               key={company.id}

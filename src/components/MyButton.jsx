@@ -19,7 +19,6 @@ export default function MyButton({
         fontWeight: '600',
         fontSize: '14px',
         padding: '10px',
-        textOverflow: 'ellipsis',
         whiteSpace: 'nowrap', // Prevent text from wrapping to the next line
         overflow: 'hidden', // Hide any text that overflows the button's width
 

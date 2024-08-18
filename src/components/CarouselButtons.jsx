@@ -6,11 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import MyButton from './MyButton';
 import '../App.css';
 
-const CarouselButtons = ({
-  categories,
-  handleCategoryClick,
-  selectedCategory,
-}) => {
+const CarouselButtons = ({ categories, handleCategoryClick, selectedCategory }) => {
   const settings = {
     infinite: false, // Infinite scrolling
     speed: 500, // Animation speed
@@ -46,18 +42,7 @@ const CarouselButtons = ({
     <Box sx={{ mt: '50px' }}>
       <Slider {...settings}>
         {categories.map((category) => (
-          <Box
-            key={category}
-            sx={{
-              mx: 1,
-            }}
-          >
-            <MyButton
-              category={category}
-              handleCategoryClick={handleCategoryClick}
-              isSelected={selectedCategory === category}
-            />
-          </Box>
+          <MyButton key={category} category={category} handleCategoryClick={handleCategoryClick} isSelected={selectedCategory === category} />
         ))}
       </Slider>
     </Box>

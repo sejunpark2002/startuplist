@@ -21,18 +21,18 @@ const CompanyDetails = ({ details }) => {
     <>
       <Box
         sx={{
-          backgroundColor: '#FFFFFF',
-          borderTop: '5px solid ',
-          minHeight: '260px',
-          borderColor: getboardercolor(statuscolor),
-          borderRadius: '16px',
-          padding: '24px',
-          cursor: 'pointer',
+          'backgroundColor': '#FFFFFF',
+          'borderTop': '5px solid ',
+          'minHeight': '260px',
+          'borderColor': getboardercolor(statuscolor),
+          'borderRadius': '16px',
+          'padding': '24px',
+          'cursor': 'pointer',
 
-          transition: 'all 0.2s ease-in-out',
+          'transition': 'all 0.2s ease-in-out',
           '&:hover': {
-            backgroundColor: '#E5E6E6',
-            transform: 'scale(1.05)',
+            'backgroundColor': '#E5E6E6',
+            'transform': 'scale(1.05)',
             '& img': {
               transform: 'rotate(340deg)',
             },
@@ -51,12 +51,7 @@ const CompanyDetails = ({ details }) => {
             {details.status}
           </Typography>
           <Stack direction="row" spacing={1}>
-            <img
-              alt="logoimage"
-              width="36px"
-              height="36px"
-              src={details.logo_link}
-            ></img>
+            <img alt="logoimage" width="36px" height="36px" src={details.logo_link}></img>
             <Typography
               sx={{
                 fontSize: '18px',

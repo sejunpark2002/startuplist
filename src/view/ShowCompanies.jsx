@@ -31,23 +31,14 @@ const ShowCompanies = () => {
   };
 
   // Step 1: Apply search term filter to the entire company list
-  const searchFilteredCompanies = companylist.filter((company) =>
-    company.name.toLowerCase().includes(searchTerm)
-  );
+  const searchFilteredCompanies = companylist.filter((company) => company.name.toLowerCase().includes(searchTerm));
 
   // Step 2: Apply category filter to the search-filtered list
-  const filteredCompanies = searchFilteredCompanies.filter(
-    (company) =>
-      selectedCategory === categories[0] ||
-      company.category === selectedCategory
-  );
+  const filteredCompanies = searchFilteredCompanies.filter((company) => selectedCategory === categories[0] || company.category === selectedCategory);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCompanies = filteredCompanies.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  const currentCompanies = filteredCompanies.slice(indexOfFirstItem, indexOfLastItem);
 
   const totalPages = Math.ceil(filteredCompanies.length / itemsPerPage);
 
@@ -76,10 +67,10 @@ const ShowCompanies = () => {
 
         <Box
           sx={{
-            whiteSpace: 'nowrap',
-            margin: 'auto',
-            maxWidth: '1200px',
-            textAlign: 'center',
+            'whiteSpace': 'nowrap',
+            'margin': 'auto',
+            'maxWidth': '1200px',
+            'textAlign': 'center',
             '@media (max-width: 600px)': {
               // Media query for mobile devices
               maxWidth: '80%', // Adjust max width on mobile
@@ -87,46 +78,27 @@ const ShowCompanies = () => {
             },
           }}
         >
-          <CarouselButtons
-            categories={categories}
-            handleCategoryClick={handleCategoryClick}
-            selectedCategory={selectedCategory}
-          />
+          <CarouselButtons categories={categories} handleCategoryClick={handleCategoryClick} selectedCategory={selectedCategory} />
         </Box>
 
         <Grid
           container
           spacing={4}
           sx={{
-            padding: '64px',
+            'padding': '64px',
             '@media (max-width: 600px)': {
               padding: '24px 16px',
             },
           }}
         >
           {currentCompanies.map((company) => (
-            <Grid
-              key={company.id}
-              item
-              lg={4}
-              md={4}
-              sm={12}
-              xs={12}
-              onClick={() =>
-                navigate(`/startup/${company.id}`, { state: { company } })
-              }
-            >
+            <Grid key={company.id} item lg={4} md={4} sm={12} xs={12} onClick={() => navigate(`/startup/${company.id}`, { state: { company } })}>
               <CompanyDetails details={company} />
             </Grid>
           ))}
         </Grid>
         <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-          <Pagination
-            count={totalPages}
-            page={currentPage}
-            onChange={handlePageChange}
-            color="primary"
-          />
+          <Pagination count={totalPages} page={currentPage} onChange={handlePageChange} color="primary" />
         </Box>
       </Box>
     </>

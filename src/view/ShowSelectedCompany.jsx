@@ -11,13 +11,13 @@ import CompanyDetails from '../components/CompanyDetails';
 import { useNavigate } from 'react-router-dom';
 // import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 const ShowSelectedCompany = () => {
   // const { id } = useParams();
   const navigate = useNavigate();
   const { company } = useLocation().state;
-  const relatedCompanies = companylist.filter(
-    (selected) => selected.category === company.category
-  );
+  const relatedCompanies = companylist.filter((selected) => selected.category === company.category);
   const statuscolor = company.status;
   const getboardercolor = (status) => {
     switch (status) {
@@ -51,6 +51,9 @@ const ShowSelectedCompany = () => {
               justifyContent: 'center',
             }}
           >
+            <Box sx={{ width: '100%', textAlign: 'left' }}>
+              <ArrowBackIcon onClick={() => navigate(-1)} />
+            </Box>
             <Stack spacing={2} alignItems="center">
               <Box
                 onClick={() => window.open(company.homepage, '_blank')}
@@ -119,25 +122,14 @@ const ShowSelectedCompany = () => {
             </Stack>
 
             <Stack direction="row" spacing={2} sx={{ mt: '20px' }}>
-              <HomeIcon
-                sx={{ cursor: 'pointer', color: '#838997' }}
-                onClick={() => window.open(company.homepage, '_blank')}
-              />
-              <LinkedInIcon
-                sx={{ cursor: 'pointer', color: '#838997' }}
-                onClick={() => window.open(company.linkedin, '_blank')}
-              />
+              <HomeIcon sx={{ cursor: 'pointer', color: '#838997' }} onClick={() => window.open(company.homepage, '_blank')} />
+              <LinkedInIcon sx={{ cursor: 'pointer', color: '#838997' }} onClick={() => window.open(company.linkedin, '_blank')} />
               {/* <FavoriteIcon sx={{ cursor: 'pointer', color: '#838997' }} />
               12 */}
             </Stack>
           </Box>
 
-          <Grid
-            container
-            spacing={4}
-            padding="64px"
-            sx={{ paddingTop: '64px' }}
-          >
+          <Grid container spacing={4} padding="64px" sx={{ paddingTop: '64px' }}>
             {relatedCompanies.slice(0, 8).map((company) => (
               <Grid
                 item
@@ -145,9 +137,7 @@ const ShowSelectedCompany = () => {
                 md={3}
                 sm={12}
                 xs={12}
-                onClick={() =>
-                  navigate(`/startup/${company.id}`, { state: { company } })
-                }
+                onClick={() => navigate(`/startup/${company.id}`, { state: { company } })}
                 sx={{ pb: '25px' }}
                 key={company.id}
               >

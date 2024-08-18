@@ -2,7 +2,7 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import logo from '../startup.png';
+import logo from '../assets/startup.png';
 
 const header = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const header = () => {
     window.location.reload();
   };
   return (
-    <>
+    <header>
       <Stack
         borderBottom={1}
         direction="row"
@@ -39,7 +39,7 @@ const header = () => {
           Startup Finder
         </Typography>
       </Stack>
-    </>
+    </header>
   );
 };
 

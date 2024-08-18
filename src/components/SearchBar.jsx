@@ -38,10 +38,7 @@ const SearchBar = ({ onSearch }) => {
 
   const filteredCompanies = companylist.filter((company) => {
     const searchlowercase = search.toLocaleLowerCase();
-    return (
-      company.name.toLocaleLowerCase().includes(searchlowercase) ||
-      company.description.toLocaleLowerCase().includes(searchlowercase)
-    );
+    return company.name.toLocaleLowerCase().includes(searchlowercase) || company.description.toLocaleLowerCase().includes(searchlowercase);
   });
 
   useEffect(() => {
@@ -81,9 +78,9 @@ const SearchBar = ({ onSearch }) => {
             ),
           }}
           sx={{
-            mt: '50px',
-            width: '100%',
-            maxWidth: '500px',
+            'mt': '50px',
+            'width': '100%',
+            'maxWidth': '500px',
             '& .MuiOutlinedInput-root': {
               borderRadius: '9999px', // Fully rounded corners
               backgroundColor: 'white', // Set the input background to white
@@ -108,19 +105,19 @@ const SearchBar = ({ onSearch }) => {
           <Box
             ref={boxRef}
             sx={{
-              position: 'absolute',
-              top: 'calc(100% + 10px)', // Place the Box just below the TextField
-              left: '50%',
-              padding: '20px',
-              cursor: 'pointer',
+              'position': 'absolute',
+              'top': 'calc(100% + 10px)', // Place the Box just below the TextField
+              'left': '50%',
+              'padding': '20px',
+              'cursor': 'pointer',
 
-              margin: 'auto',
-              width: '500px',
-              maxHeight: '100vh',
-              backgroundColor: '#FFFFFF',
-              zIndex: '1',
-              transform: 'translate(-50%)',
-              overflow: 'auto',
+              'margin': 'auto',
+              'width': '500px',
+              'maxHeight': '100vh',
+              'backgroundColor': '#FFFFFF',
+              'zIndex': '1',
+              'transform': 'translate(-50%)',
+              'overflow': 'auto',
               '@media (max-width: 600px)': {
                 // Media query for mobile devices
                 maxWidth: '80%', // Adjust max width on mobile
@@ -132,23 +129,16 @@ const SearchBar = ({ onSearch }) => {
               <>
                 <Box
                   sx={{
-                    my: '10px',
-                    padding: '5px',
+                    'my': '10px',
+                    'padding': '5px',
                     '&:hover': {
                       backgroundColor: '#E5E6E6',
                     },
                   }}
-                  onClick={() =>
-                    navigate(`/startup/${company.id}`, { state: { company } })
-                  }
+                  onClick={() => navigate(`/startup/${company.id}`, { state: { company } })}
                 >
                   <Stack direction="row" spacing={2}>
-                    <img
-                      alt="logoimage"
-                      width="36px"
-                      height="36px"
-                      src={company.logo_link}
-                    ></img>
+                    <img alt="logoimage" width="36px" height="36px" src={company.logo_link}></img>
                     <Stack sx={{ overflow: 'hidden', flexGrow: 1 }}>
                       <Typography
                         sx={{

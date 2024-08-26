@@ -129,7 +129,16 @@ const ShowSelectedCompany = () => {
             </Stack>
           </Box>
 
-          <Grid container spacing={4} padding="64px" sx={{ paddingTop: '64px' }}>
+          <Grid
+            container
+            spacing={4}
+            sx={{
+              'paddingTop': '64px',
+              '@media (max-width: 600px)': {
+                padding: '24px 16px',
+              },
+            }}
+          >
             {relatedCompanies.slice(0, 8).map((company) => (
               <Grid
                 item

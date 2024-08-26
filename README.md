@@ -16,22 +16,16 @@ Finding and connecting with startups that align with specific interests or inves
 
 ## Live Site
 
-[link](https://startupfinder.co/)
+[Click Here](https://startupfinder.co/)
 
-## Features
-
-- **Search:** Easily search for movies by title.
-- **Detailed Information:** View comprehensive details about each movie, including release year, genre, director, cast, and plot summary.
-- **Dynamic Results:** Get real-time search results as you type, making it convenient to find the desired movie quickly.
-- **Responsive Design:** Enjoy a consistent user experience across various devices, including desktops, tablets, and smartphones.
 
 ## Technologies Used
 
 - **React** 
-- **MUI** Frontend framework for building responsive and mobile-first websites.
-- **Axios:** Promise-based HTTP client for making API requests.
-- **CSS:** Styling the application for a visually appealing user interface.
-- **IMDb API:** Utilizes IMDb API for fetching movie data.
+- **MUI** 
+- **React Custom Hook** 
+- **useDebounce:** 
+- **useForm** 
 
 ## Quick Start
 
@@ -56,18 +50,6 @@ Finding and connecting with startups that align with specific interests or inves
     ```
 
 5. Open your web browser and visit `http://localhost:3000` to access the application.
-
-## Usage
-StartupFinder.co allows users to:
-
-- Browse through 1,600+ startups from the Web Summit.
-- Search startups by category to find specific areas of interest.
-- Visit the official websites of the startups.
-- Connect with startups on LinkedIn.
-
-## Deployment
-
-The Movie Search App is deployed and accessible via this [link](https://6601c4d2829f002c9fc64d56--dainty-kataifi-2e1d20.netlify.app/).
 
 ## License
 

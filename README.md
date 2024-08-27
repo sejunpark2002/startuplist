@@ -1,3 +1,10 @@
+<div align="center">
+  <a href="https://startupfinder.co/">
+    <img src="/src/assets/startup.png" alt="Logo" width="70" height="70">
+  </a>
+</div>
+
+
 # Startup Finder
 
 Showcasing 1,600 startups that participated in the Web Summit. Users can easily search for startups by category and name. The app also provides link to the website and LinkedIn profile.
@@ -31,12 +38,12 @@ Finding and connecting with startups that align with specific interests or inves
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/startupfinder.co.git
+    git clone https://github.com/sejunpark2002/startuplist.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd startupfinder.co
+    cd startuplist
     ```
 
 3. Install dependencies:
